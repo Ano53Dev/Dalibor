@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ja sam mali Dalibor</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Promenjen iz center u flex-start za mobilne uređaje */
+        height: 100vh;
+        overflow-y: auto; /* Omogućava vertikalno scrollovanje */
+      }
+
+      h1 {
+        margin-top: 5%; /* Pomeren naslov za mobilne uređaje */
+        text-align: center;
+        color: white;
+        background-color: rgba(
+          38,
+          206,
+          22,
+          0.7
+        ); /* Poluprozirna tamna pozadina */
+        padding: 10px;
+        border-radius: 20px;
+      }
+      p {
+        margin-top: 5%; /* Pomeren naslov za mobilne uređaje */
+        text-align: center;
+        color: white;
+        background-color: rgba(
+          206,
+          22,
+          108,
+          0.7
+        ); /* Poluprozirna tamna pozadina */
+        padding: 10px;
+        border-radius: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ff7f50;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #ff4500;
+      }
+
+      #quotes {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .worker-image {
+        width: 150px;
+        margin: 20px;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          margin-top: 10px; /* Skoro gore da se vidi na mobilnim uređajima */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>RADNIK GODINE</h1>
+    <h1>Ja sam mali Dalibor Grgić</h1>
+    <p>Poklikaj moje čuvene citate!</p>
+
+    <!-- Worker image section -->
+    <img
+      src="https://www.shutterstock.com/image-vector/fat-worker-drives-his-belly-600w-142118791.jpg"
+      alt="Worker with belly and cap"
+      class="worker-image"
+    />
+
+    <!-- Div za prikazivanje citata -->
+    <div id="quotes"></div>
+
+    <!-- Logo Općine Majur -->
+    <img
+      src="https://scontent.fzag5-1.fna.fbcdn.net/v/t39.30808-1/308065827_453017363524976_1162478481785606124_n.jpg?stp=c108.0.216.216a_dst-jpg_s200x200_tt6&_nc_cat=101&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=oGcaXko7PxcQ7kNvgFzyIAa&_nc_zt=24&_nc_ht=scontent.fzag5-1.fna&_nc_gid=Ahbqp35dA5_xE2CTjJ08WTO&oh=00_AYCnQoF90rpYXO_uM7LMFWkLmmUpULXgepnPJTtjpBM1-g&oe=67612BE0"
+      alt="Logo Općine Majur"
+      style="width: 150px; margin: 20px"
+    />
+
+    <button id="actionButton">Click Me</button>
+
+    <script>
+      const button = document.getElementById("actionButton");
+      const quotes = document.getElementById("quotes");
+
+      button.addEventListener("click", () => {
+        const messages = [
+          "Jedini ja u ovoj općini radim!",
+          "...eee tko je tebe zaposlio majko mila!",
+          "Potrošio sam džonove radeći!",
+          "Direktore!",
+          "Uf što su ćevapi bili dobri",
+        ];
+
+        const randomMessage =
+          messages[Math.floor(Math.random() * messages.length)];
+        quotes.textContent = randomMessage; // Dodavanje citata u div quotes
+      });
+    </script>
+  </body>
+</html>
